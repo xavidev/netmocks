@@ -10,5 +10,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="SUTS\" />
   </ItemGroup>
 </Project>

@@ -57,6 +57,26 @@ namespace Mocks.Tests
             dataManagerMock.VerifyAllExpectations();
             scoreUpdaterMock.VerifyAllExpectations();
         }
+
+        //Podemos usar Stubs para partir más el test i probar solo
+        //el aspecto que nos interese, haciendo así asl test menos
+        //frágil.
+        [Test]
+        public void AddStudentWithStub()
+        {
+            float score = 8.5f;
+            Student dummyStudent = new Student();
+
+            IScoreUpdater scoreUpdaterMock =
+                MockRepository.GenerateStrictMock<IScoreUpdater>();
+            scoreUpdaterMock.Expect(
+                y => y.UpdateScore(dummyStudent, score)).Return(dummyStudent);
+            //Realizamos un Stub del Datamaneger que en este test nos da igual.
+            IDataManager dataManagerMock =
+                MockRepository.GenerateStrictMock<IDataManager>();
+            dataManagerMock.Stub(
+                x => x.Save(dummyStudent));
+        }
     }
 }
 
