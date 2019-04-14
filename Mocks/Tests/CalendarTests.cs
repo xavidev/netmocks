@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using Rhino.Mocks;
 
-namespace Mocks
+namespace Mocks.Tests
 {
     [TestFixture]
     public class CalendarTests

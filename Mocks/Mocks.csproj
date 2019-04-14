@@ -8,4 +8,7 @@
     <PackageReference Include="RhinoMocks" Version="3.6.1" />
     <PackageReference Include="NUnit" Version="3.11.0" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\" />
+  </ItemGroup>
 </Project>
